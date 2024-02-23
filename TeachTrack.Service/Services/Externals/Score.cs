@@ -1,6 +1,6 @@
 namespace TeachTrack.Service.Services.Externals;
 
-public enum Score {
-   MinScore = 150,
-   MaxScore =  270
+public class Score {
+   public readonly float MinimunScore = 150f;
+   public readonly float MaximumScore = 270f;
 }
