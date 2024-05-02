@@ -25,4 +25,9 @@
       <Folder Include="Models\" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\TeachTrack.Services\TeachTrack.Services.csproj" />
+      <ProjectReference Include="..\TeachTrack.Tests\TeachTrack.Tests.csproj" />
+    </ItemGroup>
+
 </Project>
