@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\TeachTrack.Api\TeachTrack.Api.csproj" />
+      <ProjectReference Include="..\TeachTrack.Models\TeachTrack.Models.csproj" />
+      <ProjectReference Include="..\TeachTrack.Services\TeachTrack.Services.csproj" />
+      <ProjectReference Include="..\TeachTrack.Tests\TeachTrack.Tests.csproj" />
+    </ItemGroup>
+
+</Project>

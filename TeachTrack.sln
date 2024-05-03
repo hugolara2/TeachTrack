@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeachTrack.Models", "TeachT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeachTrack.Tests", "TeachTrack.Tests\TeachTrack.Tests.csproj", "{ECEF09EF-FCE5-4D41-9847-3BE8884833AF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeachTrack.Core", "TeachTrack.Core\TeachTrack.Core.csproj", "{2A62F3E5-214E-4D05-A6E1-EAF6D0EEFA9D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{ECEF09EF-FCE5-4D41-9847-3BE8884833AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ECEF09EF-FCE5-4D41-9847-3BE8884833AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ECEF09EF-FCE5-4D41-9847-3BE8884833AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A62F3E5-214E-4D05-A6E1-EAF6D0EEFA9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A62F3E5-214E-4D05-A6E1-EAF6D0EEFA9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A62F3E5-214E-4D05-A6E1-EAF6D0EEFA9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A62F3E5-214E-4D05-A6E1-EAF6D0EEFA9D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
