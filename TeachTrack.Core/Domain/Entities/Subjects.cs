@@ -1,4 +1,4 @@
-﻿namespace TeachTrack.Service.Domain.Entities;
+﻿namespace TeachTrack.Core.Domain.Entities;
 
 public class Subjects {
    public int SubjectId { get; set; }

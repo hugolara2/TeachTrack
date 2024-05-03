@@ -9,12 +9,11 @@
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.4" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
-    </ItemGroup>
+    </ItemGroup> 
 
     <ItemGroup>
       <ProjectReference Include="..\TeachTrack.Models\TeachTrack.Models.csproj" />
       <ProjectReference Include="..\TeachTrack.Services\TeachTrack.Services.csproj" />
-      <ProjectReference Include="..\TeachTrack.Tests\TeachTrack.Tests.csproj" />
     </ItemGroup>
 
 </Project>

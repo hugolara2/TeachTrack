@@ -8,7 +8,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\TeachTrack.Tests\TeachTrack.Tests.csproj" />
+      <ProjectReference Include="..\TeachTrack.Core\TeachTrack.Core.csproj" />
     </ItemGroup>
 
 </Project>

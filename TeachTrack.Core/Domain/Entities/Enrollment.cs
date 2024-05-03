@@ -1,6 +1,6 @@
-﻿using TeachTrack.Service.Domain.ValueObjects;
+﻿using TeachTrack.Core.Domain.ValueObjects;
 
-namespace TeachTrack.Service.Domain.Entities;
+namespace TeachTrack.Core.Domain.Entities;
 
 public class Enrollment {
    public int StudentId { get; set; }

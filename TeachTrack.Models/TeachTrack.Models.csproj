@@ -26,8 +26,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\TeachTrack.Services\TeachTrack.Services.csproj" />
-      <ProjectReference Include="..\TeachTrack.Tests\TeachTrack.Tests.csproj" />
+      <ProjectReference Include="..\TeachTrack.Core\TeachTrack.Core.csproj" />
     </ItemGroup>
 
 </Project>

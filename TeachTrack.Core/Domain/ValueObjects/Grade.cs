@@ -1,4 +1,4 @@
-﻿namespace TeachTrack.Service.Domain.ValueObjects;
+﻿namespace TeachTrack.Core.Domain.ValueObjects;
 
 public class Grade {
    public float Value { get; set; }
