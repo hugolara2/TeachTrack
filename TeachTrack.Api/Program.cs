@@ -1,9 +1,12 @@
 using Microsoft.EntityFrameworkCore;
 using TeachTrack.Core.Domain.Repositories;
-using TeachTrack.Model.AutoMapper;
+using TeachTrack.Service.AutoMapper;
 using TeachTrack.Model.DBContext;
 using TeachTrack.Model.Models;
 using TeachTrack.Model.Repositories;
+using TeachTrack.Service.AutoMapper;
+using TeachTrack.Service.DTOs;
+using TeachTrack.Service.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,11 +25,14 @@ builder.Services.AddDbContext<TeachTrackContext>(options => {
    options.UseNpgsql(connString);
 });
 
-//Repositories
+//AddingServices
+builder.Services.AddKeyedScoped<ICommonService<StudentDto, StudentInsertDto, StudentUpdateDto>, StudentService>("StudentService");
+
+//AddingRepositories
 builder.Services.AddSingleton<IRepository<Student>, StudentRepository>();
 
 //Adding automapper
-builder.Services.AddAutoMapper(typeof(Mapping));
+builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 var app = builder.Build();
 
