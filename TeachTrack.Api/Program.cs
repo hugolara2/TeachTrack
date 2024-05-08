@@ -1,5 +1,9 @@
 using Microsoft.EntityFrameworkCore;
+using TeachTrack.Core.Domain.Repositories;
+using TeachTrack.Model.AutoMapper;
 using TeachTrack.Model.DBContext;
+using TeachTrack.Model.Models;
+using TeachTrack.Model.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +13,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+//Context
 builder.Services.AddDbContext<TeachTrackContext>(options => {
    var config = new ConfigurationBuilder()
       .AddUserSecrets<TeachTrackContext>()
@@ -16,6 +21,12 @@ builder.Services.AddDbContext<TeachTrackContext>(options => {
    var connString = config.GetConnectionString("DefaultConn");
    options.UseNpgsql(connString);
 });
+
+//Repositories
+builder.Services.AddSingleton<IRepository<Student>, StudentRepository>();
+
+//Adding automapper
+builder.Services.AddAutoMapper(typeof(Mapping));
 
 var app = builder.Build();
 

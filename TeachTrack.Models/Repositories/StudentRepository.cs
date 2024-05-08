@@ -1,26 +1,30 @@
-﻿using TeachTrack.Core.Domain.Entities;
+﻿using Microsoft.EntityFrameworkCore;
 using TeachTrack.Core.Domain.Repositories;
+using TeachTrack.Model.DBContext;
+using TeachTrack.Model.Models;
 
 namespace TeachTrack.Model.Repositories;
 
-public class StudentRepository : IStudentRepository {
-   public Task<Students> GetAsync() {
-      throw new NotImplementedException();
+public class StudentRepository : IRepository<Student> {
+
+   private TeachTrackContext _context;
+
+   public StudentRepository(TeachTrackContext context) {
+      _context = context;
    }
 
-   public Task<Students> GetByIdAsync(int id) {
-      throw new NotImplementedException();
+   public async Task<IEnumerable<Student>> Get() => await _context.Students.ToListAsync();
+
+   public async Task<Student> GetById(int id) => await _context.Students.FindAsync(id);
+
+   public async Task Add(Student student) => await _context.Students.AddAsync(student);
+
+   public void Update(Student student) {
+      _context.Students.Attach(student);
+      _context.Students.Entry(student).State = EntityState.Modified;
    }
 
-   public Task AddAsync(Students student) {
-      throw new NotImplementedException();
-   }
+   public void Delete(Student student) => _context.Remove(student);
 
-   public void Update(Students student) {
-      throw new NotImplementedException();
-   }
-
-   public void Delete(Students student) {
-      throw new NotImplementedException();
-   }
+   public async Task Save() => await _context.SaveChangesAsync();
 }
