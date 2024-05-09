@@ -29,7 +29,7 @@ builder.Services.AddDbContext<TeachTrackContext>(options => {
 builder.Services.AddKeyedScoped<ICommonService<StudentDto, StudentInsertDto, StudentUpdateDto>, StudentService>("StudentService");
 
 //AddingRepositories
-builder.Services.AddSingleton<IRepository<Student>, StudentRepository>();
+builder.Services.AddScoped<IRepository<Student>, StudentRepository>();
 
 //Adding automapper
 builder.Services.AddAutoMapper(typeof(MappingProfile));

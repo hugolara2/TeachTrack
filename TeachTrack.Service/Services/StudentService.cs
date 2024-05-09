@@ -20,7 +20,14 @@ public class StudentService : ICommonService<StudentDto, StudentInsertDto, Stude
    }
 
    public async Task<StudentDto> GetById(int id) {
-      throw new NotImplementedException();
+      var student = await _repository.GetById(id);
+
+      if (student != null) {
+         var studentDto = _mapper.Map<StudentDto>(student);
+         return studentDto;
+      }
+      
+      return null;
    }
 
    public async Task<StudentDto> Add(StudentInsertDto insertDto) {

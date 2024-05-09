@@ -16,10 +16,5 @@ public class StudentUpdateDto {
    public int? Semesterid { get; set; }
 
    public string? Status { get; set; }
-
-   public int Career { get; set; }
-
-   public int Degree { get; set; }
-
-   public int Semester { get; set; }
+   
 }
