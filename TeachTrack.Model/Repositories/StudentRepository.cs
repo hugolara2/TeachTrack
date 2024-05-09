@@ -24,7 +24,5 @@ public class StudentRepository : IRepository<Student> {
       _context.Students.Entry(student).State = EntityState.Modified;
    }
 
-   public void Delete(Student student) => _context.Remove(student);
-
    public async Task Save() => await _context.SaveChangesAsync();
 }

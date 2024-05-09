@@ -16,7 +16,7 @@ public class StudentService : ICommonService<StudentDto, StudentInsertDto, Stude
    
    public async Task<IEnumerable<StudentDto>> Get() {
       var student = await _repository.Get();
-      return student.Select(student => _mapper.Map<StudentDto>(student));
+      return student.Select(student => _mapper.Map<StudentDto>(student)).Where(s => s.Status == "Active");
    }
 
    public async Task<StudentDto> GetById(int id) {
@@ -31,14 +31,41 @@ public class StudentService : ICommonService<StudentDto, StudentInsertDto, Stude
    }
 
    public async Task<StudentDto> Add(StudentInsertDto insertDto) {
-      throw new NotImplementedException();
+      var student = _mapper.Map<Student>(insertDto);
+
+      await _repository.Add(student);
+      await _repository.Save();
+
+      var studentDto = _mapper.Map<StudentDto>(student);
+      return studentDto;
    }
 
-   public async Task<StudentDto> Update(StudentUpdateDto updateDto) {
-      throw new NotImplementedException();
+   public async Task<StudentDto> Update(int id, StudentUpdateDto updateDto) {
+      var student = await _repository.GetById(id);
+
+      if (student != null) {
+         student = _mapper.Map<StudentUpdateDto, Student>(updateDto, student);
+         
+         _repository.Update(student);
+         await _repository.Save();
+
+         var studentDto = _mapper.Map<StudentDto>(student);
+         return studentDto;
+      }
+
+      return null;
    }
 
    public async Task<StudentDto> Delete(int id) {
-      throw new NotImplementedException();
+      var student = await _repository.GetById(id);
+
+      if (student != null) {
+         student.Status = "Inactive";
+         _repository.Update(student);
+         _repository.Save();
+         return _mapper.Map<StudentDto>(student);
+      }
+
+      return null;
    }
 }
