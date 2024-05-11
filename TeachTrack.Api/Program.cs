@@ -30,9 +30,13 @@ builder.Services.AddKeyedScoped<ICommonService<StudentDto, StudentInsertDto, Stu
    "StudentService");
 builder.Services.AddKeyedScoped<ICommonService<CareerDto, CareerInsertDto, CareerUpdateDto>, CareerService>(
    "CareerService");
+builder.Services.AddKeyedScoped<IBasicService<DegreeDto>, DegreeService>("DegreeService");
+   
+   
 //AddingRepositories
 builder.Services.AddScoped<IRepository<Student>, StudentRepository>();
 builder.Services.AddScoped<IRepository<Career>, CareerRepository>();
+builder.Services.AddScoped<IBasicRepository<Degree>, DegreeRepository>();
 
 //Adding automapper
 builder.Services.AddAutoMapper(typeof(MappingProfile));

@@ -17,6 +17,10 @@ public class MappingProfile : Profile {
       CreateMap<Career, CareerDto>()
          .ForMember(c => c.Careerid,
             m => m.MapFrom(career => career.Careerid));
-      CreateMap<CareerUpdateDto, Career>();
+      CreateMap<CareerUpdateDto, Career>(); 
+      //Degree
+      CreateMap<Degree, DegreeDto>()
+         .ForMember(d => d.Degreeid,
+            m => m.MapFrom(degree => degree.Degreeid));
    }
 }
