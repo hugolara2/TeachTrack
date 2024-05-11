@@ -62,7 +62,7 @@ public class StudentService : ICommonService<StudentDto, StudentInsertDto, Stude
       if (student != null) {
          student.Status = "Inactive";
          _repository.Update(student);
-         _repository.Save();
+         await _repository.Save();
          return _mapper.Map<StudentDto>(student);
       }
 

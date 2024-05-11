@@ -26,10 +26,13 @@ builder.Services.AddDbContext<TeachTrackContext>(options => {
 });
 
 //AddingServices
-builder.Services.AddKeyedScoped<ICommonService<StudentDto, StudentInsertDto, StudentUpdateDto>, StudentService>("StudentService");
-
+builder.Services.AddKeyedScoped<ICommonService<StudentDto, StudentInsertDto, StudentUpdateDto>, StudentService>(
+   "StudentService");
+builder.Services.AddKeyedScoped<ICommonService<CareerDto, CareerInsertDto, CareerUpdateDto>, CareerService>(
+   "CareerService");
 //AddingRepositories
 builder.Services.AddScoped<IRepository<Student>, StudentRepository>();
+builder.Services.AddScoped<IRepository<Career>, CareerRepository>();
 
 //Adding automapper
 builder.Services.AddAutoMapper(typeof(MappingProfile));

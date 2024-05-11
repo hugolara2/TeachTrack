@@ -7,7 +7,7 @@ namespace TeachTrack.Model.Repositories;
 
 public class StudentRepository : IRepository<Student> {
 
-   private TeachTrackContext _context;
+   private readonly TeachTrackContext _context;
 
    public StudentRepository(TeachTrackContext context) {
       _context = context;

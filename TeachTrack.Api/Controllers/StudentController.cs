@@ -1,9 +1,4 @@
-﻿using System.Net;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.VisualBasic.CompilerServices;
-using TeachTrack.Model.DBContext;
-using TeachTrack.Model.Models;
+﻿using Microsoft.AspNetCore.Mvc;
 using TeachTrack.Service.DTOs;
 using TeachTrack.Service.Services;
 
