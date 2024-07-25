@@ -1,0 +1,6 @@
+@TeachTrack.API_HostAddress = http://localhost:5191
+
+GET {{TeachTrack.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
